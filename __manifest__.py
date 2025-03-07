@@ -5,7 +5,7 @@
     'description': """Modifica los recibos de pago""",
 
     'author': "DGV",
-    # 'website': "http://www.yourcompany.com",
+    'website': "https://github.com/AlfaSystemas5457/payment_receipt_custom_report",
 
     'category': 'Uncategorized',
     'version': '0.1',
