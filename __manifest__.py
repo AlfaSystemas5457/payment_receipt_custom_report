@@ -17,8 +17,5 @@
     'data': [
         'views/document_template_boxed_view.xml',
         'views/payment_receipt_view.xml',
-        'views/add_field_receipt_view.xml',
-        'views/payment_receipt_view_template.xml',
-        'views/components_views_template.xml',
     ],
 }
