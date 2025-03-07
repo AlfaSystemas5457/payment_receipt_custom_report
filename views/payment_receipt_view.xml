@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id="report_payment_receipt_document"
+        inherit_id="account.report_payment_receipt_document">
+
+        <xpath expr="//div[@class='page']" position="replace">
+
+            <t t-call="payment_receipt_custom_report_serv.payment_receipt_view_template" />
+
+            <div class="oe_structure" />
+
+            <!-- Segunda pagina -->
+
+            <div class="page" style="page-break-before: always;">
+
+                <t t-call="payment_receipt_custom_report_serv.image_data" />
+
+                <t t-call="payment_receipt_custom_report_serv.invoice_data" />
+
+                <t t-call="payment_receipt_custom_report_serv.payment_confirm" />
+
+                <t t-call="payment_receipt_custom_report_serv.departaments" />
+
+                <t t-call="payment_receipt_custom_report_serv.comments" />
+
+            </div>
+
+        </xpath>
+    </template>
+
+    <template id="image_data">
+        <div class="row">
+            <div class="col-2" />
+            <div class="col-8">
+                <img
+                    t-att-src="'data:image/png;base64,' + (o.receipt and o.receipt.decode('utf-8') or '')"
+                    alt="Recibo de pago"
+                    style="max-width: 100%; max-height: 400px; margin: 10px auto;" />
+            </div>
+            <div class="col-2" />
+        </div>
+    </template>
+
+    <template id="invoice_data">
+        <t t-call="payment_receipt_custom_report_serv.component_title">
+            <t t-set="title" t-value="'Datos para facturación'" />
+        </t>
+
+        <div class="w-100 m-0 p-0">
+            <h5 class="text-center w-100 text-uppercase m-0"
+                style="font-size: 10px;"
+                t-esc="o.company_id.nombre_fiscal" />
+        </div>
+        <div class="w-100 m-0 p-0">
+            <h5 class="text-center w-100 text-uppercase m-0"
+                style="font-size: 10px;"
+                t-esc="o.company_id.rfc" />
+        </div>
+        <div class="row">
+            <h5 class="text-center w-100 text-uppercase m-0"
+                style="font-size: 10px;"
+                t-esc="o.company_id.street" />
+        </div>
+        <div class="row">
+            <h5 class="text-center w-100 text-uppercase m-0"
+                style="font-size: 10px;"
+                t-esc="o.company_id.street2" />
+        </div>
+        <div class="row">
+            <h5 class="text-center w-100 text-uppercase m-0"
+                style="font-size: 10px;">
+                <t t-esc="o.company_id.city" /> <t t-esc="o.company_id.state_id.name" /> C.P. <t
+                    t-esc="o.company_id.zip" />
+            </h5>
+        </div>
+        <div class="row">
+            <h5 class="text-center w-100 text-uppercase m-0" style="font-size: 10px;"> tel: <t
+                    t-esc="o.company_id.phone" />
+            </h5>
+        </div>
+        <div class="row">
+            <h5 class="text-center w-100 m-0" style="font-size: 10px;">
+                <a href="mailto:fernando@servinding.com"
+                    style="color: #007bff; text-decoration: underline;">
+                    fernando@servinding.com
+                </a>
+            </h5>
+        </div>
+        <div class="row">
+            <h5 class="text-center w-100 m-0" style="font-size: 10px;">
+                <a href="mailto:ventas@servinding.com"
+                    style="color: #007bff; text-decoration: underline;">
+                    ventas@servinding.com
+                </a>
+            </h5>
+        </div>
+        <div class="row">
+            <h5 class="text-center w-100 m-0" style="font-size: 10px;">
+                <a href="mailto:administracion@servinding.com"
+                    style="color: #007bff; text-decoration: underline;">
+                    administracion@servinding.com
+                </a>
+            </h5>
+        </div>
+        <div class="row mb-1">
+            <h5 class="text-center w-100 m-0" style="font-size: 10px;">
+                <a href="mailto:almacen@servinding.com"
+                    style="color: #007bff; text-decoration: underline;">
+                    almacen@servinding.com
+                </a>
+            </h5>
+        </div>
+    </template>
+
+    <template id="payment_confirm">
+        <t t-call="payment_receipt_custom_report_serv.component_title">
+            <t t-set="title" t-value="'Confirmación de pago'" />
+        </t>
+        <div class="row p-2">
+            <div class="w-50 d-flex flex-row">
+                <div class="col-6">
+                    <div>
+                        <t t-call="payment_receipt_custom_report_serv.component_payment_forms">
+                            <t t-set="title" t-value="'Correo electronico'" />
+                            <t t-set="className" t-value="'fa fa-envelope'" />
+                        </t>
+                    </div>
+
+                    <div>
+                        <t t-call="payment_receipt_custom_report_serv.component_payment_forms">
+                            <t t-set="title" t-value="'WhatsApp'" />
+                            <t t-set="className" t-value="'fab fa-whatsapp'" />
+                        </t>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div>
+                        <t t-call="payment_receipt_custom_report_serv.component_payment_forms">
+                            <t t-set="title" t-value="'Telefonico'" />
+                            <t t-set="className" t-value="'fa fa-phone'" />
+                        </t>
+                    </div>
+
+                    <div>
+                        <t t-call="payment_receipt_custom_report_serv.component_payment_forms">
+                            <t t-set="title" t-value="'Página web'" />
+                            <t t-set="className" t-value="'fa fa-globe'" />
+                        </t>
+                    </div>
+                </div>
+            </div>
+            <div class="w-50">
+                <h3 style="font-size: 10px">
+                    <strong>ENVIA INFORMACION - ING.FERNANDA HASEL GUERRERO TREJO</strong>
+                </h3>
+            </div>
+        </div>
+    </template>
+
+    <template id="departaments">
+        <t t-call="payment_receipt_custom_report_serv.component_title">
+            <t t-set="title" t-value="'Departamentos involucrados'" />
+        </t>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-4 px-5">
+                <t t-call="payment_receipt_custom_report_serv.component_departament_box">
+                    <t t-set="departament" t-value="'Almacen'" />
+                </t>
+            </div>
+
+            <div class="col-4 px-5">
+                <t t-call="payment_receipt_custom_report_serv.component_departament_box">
+                    <t t-set="departament" t-value="'Tienda'" />
+                </t>
+            </div>
+
+            <div class="col-4 px-5">
+                <t t-call="payment_receipt_custom_report_serv.component_departament_box">
+                    <t t-set="departament" t-value="'Compras / Ventas'" />
+                </t>
+            </div>
+        </div>
+    </template>
+
+    <template id="comments">
+        <t t-call="payment_receipt_custom_report_serv.component_title">
+            <t t-set="title" t-value="'Comentarios'" />
+        </t>
+
+        <div class="row" style="border: 2px solid black; height: 200px;" />
+    </template>
+
+</odoo>

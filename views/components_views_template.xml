@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id="component_title">
+        <div class="row p-1 mb-1">
+            <h4 class="text-center w-100 m-0" style="border-bottom: 2px solid black;">
+                <strong>
+                    <t t-esc="title" />
+                </strong>
+            </h4>
+        </div>
+    </template>
+
+    <template id="component_payment_forms">
+        <div class="d-flex flex-row text-uppercase"
+            style="font-size: 10px; display: flex; align-items: center;">
+            <h5 style="margin: 0; font-size: 10px;">
+                <t t-esc="title" />
+            </h5>
+            <span t-att-class="'o_email-icon ' + className" style="margin-left: 10px;" />
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 20 20"
+                style="margin-left: 10px;">
+                <circle cx="10" cy="10" r="9" fill="none" stroke="#545454" stroke-width="2" />
+            </svg>
+        </div>
+    </template>
+
+    <template id="component_departament_box">
+        <div class="">
+            <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="100" viewBox="0 0 30 20"
+                    style="margin-bottom: 5px;">
+                    <rect x="1" y="1" width="28" height="18" fill="none" stroke="#545454"
+                        stroke-width="0.5" />
+                </svg>
+            </div>
+
+            <div class="text-center">
+                <h5 style="margin: 0; font-size: 15px;" class="w-100">
+                    <t t-esc="departament" />
+                </h5>
+            </div>
+        </div>
+    </template>
+
+</odoo>

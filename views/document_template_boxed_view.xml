@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id="external_layout_boxed" inherit_id="web.external_layout_boxed">
+
+        <xpath expr="//h4[@class='mt0']" position="replace">
+            <h4 class="mt0" style="font-size: 20px;" t-field="company.report_header" />
+        </xpath>
+
+    </template>
+</odoo>
