@@ -5,12 +5,12 @@
 
         <xpath expr="//div[@class='page']" position="replace">
 
-            <h3 class="m-0">
+            <h3>
                 <strong>POLIZA DE PAGO: <span t-field="o.name" />
                 </strong>
             </h3>
 
-            <div class="row mt-1">
+            <div class="row mt64">
                 <div class="col-6" t-if="o.payment_date">
                     <strong>Fecha del Pago: </strong>
                     <span t-field="o.payment_date" />
@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <div class="row mb-1">
+            <div class="row mb64">
                 <div class="col-6" t-if="o.amount">
                     <strong>Importe del pago: </strong>
                     <span t-field="o.amount"
@@ -109,238 +109,6 @@
                         <div class="col-2" />
                     </div>
                 </t>
-
-                <div class="row p-1 mb-1">
-                    <h4 class="text-center w-100 m-0" style="border-bottom: 2px solid black;">
-                        <strong>
-                            Datos para facturación
-                        </strong>
-                    </h4>
-                </div>
-
-                <div class="w-100 m-0 p-0">
-                    <h5 class="text-center w-100 text-uppercase m-0" style="font-size: 10px;"
-                        t-esc="o.company_id.nombre_fiscal" />
-                </div>
-                <div class="w-100 m-0 p-0">
-                    <h5 class="text-center w-100 text-uppercase m-0" style="font-size: 10px;"
-                        t-esc="o.company_id.rfc" />
-                </div>
-                <div class="row">
-                    <h5 class="text-center w-100 text-uppercase m-0" style="font-size: 10px;"
-                        t-esc="o.company_id.street" />
-                </div>
-                <div class="row">
-                    <h5 class="text-center w-100 text-uppercase m-0" style="font-size: 10px;"
-                        t-esc="o.company_id.street2" />
-                </div>
-                <div class="row">
-                    <h5 class="text-center w-100 text-uppercase m-0" style="font-size: 10px;">
-                        <t t-esc="o.company_id.city" />
-                        <t t-esc="o.company_id.state_id.name" /> C.P. <t
-                            t-esc="o.company_id.zip" />
-                    </h5>
-                </div>
-                <div class="row">
-                    <h5 class="text-center w-100 text-uppercase m-0" style="font-size: 10px;"> tel: <t
-                            t-esc="o.company_id.phone" />
-                    </h5>
-                </div>
-                <div class="row">
-                    <h5 class="text-center w-100 m-0" style="font-size: 10px;">
-                        <a href="mailto:fernando@servinding.com"
-                            style="color: #007bff; text-decoration: underline;">
-                            fernando@servinding.com
-                        </a>
-                    </h5>
-                </div>
-                <div class="row">
-                    <h5 class="text-center w-100 m-0" style="font-size: 10px;">
-                        <a href="mailto:ventas@servinding.com"
-                            style="color: #007bff; text-decoration: underline;">
-                            ventas@servinding.com
-                        </a>
-                    </h5>
-                </div>
-                <div class="row">
-                    <h5 class="text-center w-100 m-0" style="font-size: 10px;">
-                        <a href="mailto:administracion@servinding.com"
-                            style="color: #007bff; text-decoration: underline;">
-                            administracion@servinding.com
-                        </a>
-                    </h5>
-                </div>
-                <div class="row mb-1">
-                    <h5 class="text-center w-100 m-0" style="font-size: 10px;">
-                        <a href="mailto:almacen@servinding.com"
-                            style="color: #007bff; text-decoration: underline;">
-                            almacen@servinding.com
-                        </a>
-                    </h5>
-                </div>
-
-                <div class="row p-1 mb-1">
-                    <h4 class="text-center w-100 m-0" style="border-bottom: 2px solid black;">
-                        <strong>
-                            Confirmación de pago
-                        </strong>
-                    </h4>
-                </div>
-
-                <div class="row p-2">
-                    <div class="w-50 d-flex flex-row">
-                        <div class="col-6">
-                            <div>
-                                <div class="d-flex flex-row text-uppercase"
-                                    style="font-size: 10px; display: flex; align-items: center;">
-                                    <h5 style="margin: 0; font-size: 10px;">
-                                        Correo electronico
-                                    </h5>
-                                    <span t-att-class="'o_email-icon fa fa-envelope'"
-                                        style="margin-left: 10px;" />
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
-                                        viewBox="0 0 20 20" style="margin-left: 10px;">
-                                        <circle cx="10" cy="10" r="9" fill="none" stroke="#545454"
-                                            stroke-width="2" />
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="d-flex flex-row text-uppercase"
-                                    style="font-size: 10px; display: flex; align-items: center;">
-                                    <h5 style="margin: 0; font-size: 10px;">
-                                        WhatsApp
-                                    </h5>
-                                    <span t-att-class="'o_email-icon frab fa-whatsapp'"
-                                        style="margin-left: 10px;" />
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
-                                        viewBox="0 0 20 20" style="margin-left: 10px;">
-                                        <circle cx="10" cy="10" r="9" fill="none" stroke="#545454"
-                                            stroke-width="2" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6">
-                            <div>
-                                <div class="d-flex flex-row text-uppercase"
-                                    style="font-size: 10px; display: flex; align-items: center;">
-                                    <h5 style="margin: 0; font-size: 10px;">
-                                        Telefonico
-                                    </h5>
-                                    <span t-att-class="'o_email-icon fa fa-phone'"
-                                        style="margin-left: 10px;" />
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
-                                        viewBox="0 0 20 20" style="margin-left: 10px;">
-                                        <circle cx="10" cy="10" r="9" fill="none" stroke="#545454"
-                                            stroke-width="2" />
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="d-flex flex-row text-uppercase"
-                                    style="font-size: 10px; display: flex; align-items: center;">
-                                    <h5 style="margin: 0; font-size: 10px;">
-                                        Página web
-                                    </h5>
-                                    <span t-att-class="'o_email-icon fa fa-globe'"
-                                        style="margin-left: 10px;" />
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
-                                        viewBox="0 0 20 20" style="margin-left: 10px;">
-                                        <circle cx="10" cy="10" r="9" fill="none" stroke="#545454"
-                                            stroke-width="2" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-50">
-                        <h3 style="font-size: 10px">
-                            <strong>ENVIA INFORMACION - ING.FERNANDA HASEL GUERRERO TREJO</strong>
-                        </h3>
-                    </div>
-                </div>
-
-                <div class="row p-1 mb-1">
-                    <h4 class="text-center w-100 m-0" style="border-bottom: 2px solid black;">
-                        <strong>
-                            Departamentos involucrados
-                        </strong>
-                    </h4>
-                </div>
-
-                <div class="row d-flex justify-content-center">
-                    <div class="col-4 px-5">
-                        <div class="">
-                            <div class="text-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="100"
-                                    viewBox="0 0 30 20" style="margin-bottom: 5px;">
-                                    <rect x="1" y="1" width="28" height="18" fill="none"
-                                        stroke="#545454" stroke-width="0.5" />
-                                </svg>
-                            </div>
-
-                            <div class="text-center">
-                                <h5 style="margin: 0; font-size: 15px;" class="w-100">
-                                    Almacen
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-4 px-5">
-                        <div class="">
-                            <div class="text-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="100"
-                                    viewBox="0 0 30 20" style="margin-bottom: 5px;">
-                                    <rect x="1" y="1" width="28" height="18" fill="none"
-                                        stroke="#545454" stroke-width="0.5" />
-                                </svg>
-                            </div>
-
-                            <div class="text-center">
-                                <h5 style="margin: 0; font-size: 15px;" class="w-100">
-                                    Tienda
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-4 px-5">
-                        <div class="">
-                            <div class="text-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="100"
-                                    viewBox="0 0 30 20" style="margin-bottom: 5px;">
-                                    <rect x="1" y="1" width="28" height="18" fill="none"
-                                        stroke="#545454" stroke-width="0.5" />
-                                </svg>
-                            </div>
-
-                            <div class="text-center">
-                                <h5 style="margin: 0; font-size: 15px;" class="w-100">
-                                    Compras / Ventas
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row p-1 mb-1">
-                    <h4 class="text-center w-100 m-0" style="border-bottom: 2px solid black;">
-                        <strong>
-                            Comentarios
-                        </strong>
-                    </h4>
-                </div>
-
-                <div class="row" style="border: 2px solid black; height: 150px;" />
 
             </div>
 
