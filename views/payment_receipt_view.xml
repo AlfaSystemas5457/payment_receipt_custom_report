@@ -13,7 +13,9 @@
 
             <div class="page" style="page-break-before: always;">
 
-                <t t-call="payment_receipt_custom_report_serv.image_data" />
+                <t t-if="o.receipt">
+                    <t t-call="payment_receipt_custom_report_serv.image_data" />
+                </t>
 
                 <t t-call="payment_receipt_custom_report_serv.invoice_data" />
 
